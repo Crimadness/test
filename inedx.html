@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz zamówienia</title>
+    <style>
+        /* Resetowanie domyślnych stylów */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Podstawowe style strony */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f1f1;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Kontener formularza */
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        /* Nagłówek formularza */
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Style dla etykiet */
+        label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Style dla inputów i selectów */
+        input, select {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #EBD49F;
+            outline: none;
+        }
+
+        /* Przycisk */
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #EBD49F;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Styl dla grupy formularzy */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Styl dla linków (jeśli chcesz dodać jakieś linki) */
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #45a049;
+        }
+
+        /* Dla responsywności */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Formularz Zamówienia</h1>
+        <!-- Formularz wysyłający dane do FormSubmit -->
+        <form id="orderForm" action="https://formsubmit.co/adnesscrim@gmail.com" method="POST">
+            <!-- Ukryte pola wymagane przez FormSubmit -->
+            <input type="hidden" name="_subject" value="Nowe zamówienie ze strony!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
+            <div class="form-group">
+                <label for="firstName">Imię</label>
+                <input type="text" id="firstName" name="Imię" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Nazwisko</label>
+                <input type="text" id="lastName" name="Nazwisko" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">Miejscowość</label>
+                <input type="text" id="city" name="Miejscowość" required>
+            </div>
+
+            <div class="form-group">
+                <label for="postalCode">Kod Pocztowy</label>
+                <input type="text" id="postalCode" name="Kod Pocztowy" required pattern="\d{2}-\d{3}">
+            </div>
+
+            <div class="form-group">
+                <label for="street">Ulica</label>
+                <input type="text" id="street" name="Ulica" required>
+            </div>
+
+            <div class="form-group">
+                <label for="houseNumber">Nr domu</label>
+                <input type="text" id="houseNumber" name="Nr domu" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Numer telefonu</label>
+                <input type="tel" id="phoneNumber" name="Numer telefonu" required pattern="[0-9]{9}">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Adres e-mail</label>
+                <input type="email" id="email" name="Adres e-mail" required>
+            </div>
+
+            <button type="submit">Zapłać</button>
+        </form>
+    </div>
+
+</body>
+</html>
